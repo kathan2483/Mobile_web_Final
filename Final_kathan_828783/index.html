@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>ExploreGram</title>
+
+</head>
+<body>
+
+ 
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-home d-block"></i> Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-bell d-block"></i> Notification</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-user d-block"></i> Profile</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+   
+    <div class="container mt-4">
+        <h2 class="text-primary text-center">ExploreGram!</h2>
+    
+      
+        <div class="alert alert-info">
+            <strong>Latest News/Job Posting:</strong> Here goes the latest job posting or news.
+        </div>
+    
+   
+        <div class="row">
+            <!-- Modal 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="modal" id="modal1">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Modal 1</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <!-- Replace the following content with your actual modal content -->
+                                <img src="your-image-url1.jpg" class="img-fluid" alt="Image 1">
+                                <p>Some text goes here for Modal 1.</p>
+                                <p>Timestamp: <span id="timestamp1"></span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="modal" id="modal2">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Modal 2</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <!-- Replace the following content with your actual modal content -->
+                                <img src="your-image-url2.jpg" class="img-fluid" alt="Image 2">
+                                <p>Some text goes here for Modal 2.</p>
+                                <p>Timestamp: <span id="timestamp2"></span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="modal" id="modal3">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Modal 3</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <!-- Replace the following content with your actual modal content -->
+                                <img src="your-image-url3.jpg" class="img-fluid" alt="Image 3">
+                                <p>Some text goes here for Modal 3.</p>
+                                <p>Timestamp: <span id="timestamp3"></span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <form id="profileForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+    
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+    
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required pattern="\d{10}">
+    
+            <label for="zip">Zip Code:</label>
+            <input type="text" id="zip" name="zip" required pattern="[A-Za-z]\d[A-Za-z] \d[A-Za-z]\d">
+    
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script>
+        $(document).ready(function(){
+      
+            $("#profileForm").validate({
+                rules: {
+                    name: "required",
+                    dob: "required",
+                    phone: {
+                        required: true,
+                        pattern: /\d{10}/
+                    },
+                    zip: {
+                        required: true,
+                        pattern: /[A-Za-z]\d[A-Za-z] \d[A-Za-z]\d/
+                    }
+                },
+                messages: {
+                    name: "Please enter your name",
+                    dob: "Please enter your date of birth",
+                    phone: {
+                        required: "Please enter your phone number",
+                        pattern: "Please enter a valid phone number"
+                    },
+                    zip: {
+                        required: "Please enter your zip code",
+                        pattern: "Please enter a valid Canadian zip code"
+                    }
+                }
+            });
+        });
+    </script>
+    
+    </body>
+</html>
